@@ -1,6 +1,6 @@
 $(document).ready(function () {
-
-    $('#section1').show();
+    $('#section0').show();
+    $('#section1').hide();
     $('#section2').hide();
     $('#section3').hide();
     $('#section4').hide();
@@ -26,6 +26,26 @@ $(document).ready(function () {
         $(window).attr('location','index.html');
         $(location).prop('href', 'index.html');
         // window.location.reload(true);
+    });
+
+    $('#btnAvancar0').click(function(){
+        $('#section0').hide();
+        $('#section1').show();
+        $('#section2').hide();
+        $('#section3').hide();
+        $('#section4').hide();
+        $('#section5').hide();
+        $('#section6').hide();
+        $('#section7').hide();
+        $('#section8').hide();
+        $('#section9').hide();
+        $('#section10').hide();
+        $('#section11').hide();
+        $('#section12').hide();
+        $('#section13').hide();
+        $('#section14').hide();
+        $('#section15').hide();
+
     });
 
     //ação botão avançar seção 1
@@ -145,6 +165,7 @@ $(document).ready(function () {
             console.log('seção 1 = ' + section1);
         }
 
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').show();
         $('#section3').hide();
@@ -165,7 +186,7 @@ $(document).ready(function () {
     
     //ação botão voltar seção 2
     $('#btnVoltar2').click(function(){
-
+        $('#section0').hide();
         $('#section1').show();
         $('#section2').hide();
         $('#section3').hide();
@@ -300,6 +321,7 @@ $(document).ready(function () {
             console.log('seção 2 = ' + section2);
         }
         
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').show();
@@ -319,6 +341,7 @@ $(document).ready(function () {
 
     //ação botão voltar seção 3
     $('#btnVoltar3').click(function(){
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').show();
         $('#section3').hide();
@@ -452,6 +475,8 @@ $(document).ready(function () {
             section3 = Number(Number(question13) + Number(question14) + Number(questio15) + Number(question16) + Number(question17) + Number(question18));
             console.log('seção 3 = ' + section3);
         }
+
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -490,7 +515,7 @@ $(document).ready(function () {
 
     //ação botão avançar seção 4
     $('#btnAvancar4').click(function(){
-
+        
         var section4 = null;
         var question19 = null;
         var question20 = null;
@@ -499,6 +524,7 @@ $(document).ready(function () {
         var question23 = null;
         var question24 = null;
 
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -518,6 +544,7 @@ $(document).ready(function () {
 
     //ação botão voltar seção 5
     $('#btnVoltar5').click(function(){
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -544,6 +571,7 @@ $(document).ready(function () {
         var question28 = null;
         var question29 = null;
         var question30 = null;
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -563,6 +591,7 @@ $(document).ready(function () {
 
     //ação botão voltar seção 6
     $('#btnVoltar6').click(function(){
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -589,6 +618,7 @@ $(document).ready(function () {
         var question34 = null;
         var question35 = null;
         var question36 = null;
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -608,6 +638,7 @@ $(document).ready(function () {
     
     //ação botão voltar seção 7
     $('#btnVoltar7').click(function(){
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -634,6 +665,7 @@ $(document).ready(function () {
         var question40 = null;
         var question41 = null;
         var question42 = null; 
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -653,6 +685,7 @@ $(document).ready(function () {
 
     //ação botão voltar seção 8
     $('#btnVoltar8').click(function(){
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -679,6 +712,7 @@ $(document).ready(function () {
         var question46 = null;
         var question47 = null;
         var question48 = null;
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -698,6 +732,7 @@ $(document).ready(function () {
 
     //ação botão voltar seção 9
     $('#btnVoltar9').click(function(){
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -724,6 +759,7 @@ $(document).ready(function () {
         var question52 = null;
         var question53 = null;
         var question54 = null; 
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -743,6 +779,7 @@ $(document).ready(function () {
 
     //ação botão voltar seção 10
     $('#btnVoltar10').click(function(){
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -769,6 +806,7 @@ $(document).ready(function () {
         var question58 = null;
         var question59 = null;
         var question60 = null;
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -788,6 +826,7 @@ $(document).ready(function () {
 
     //ação botão voltar seção 11
     $('#btnVoltar11').click(function(){
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -814,6 +853,7 @@ $(document).ready(function () {
         var question64 = null;
         var question65 = null;
         var question66 = null;
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -833,6 +873,7 @@ $(document).ready(function () {
 
     //ação botão voltar seção 12
     $('#btnVoltar12').click(function(){
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -859,6 +900,7 @@ $(document).ready(function () {
         var question70 = null;
         var question71 = null;
         var question72 = null; 
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -878,6 +920,7 @@ $(document).ready(function () {
 
     //ação botão voltar seção 13
     $('#btnVoltar12').click(function(){
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -904,6 +947,7 @@ $(document).ready(function () {
         var question76 = null;
         var question77 = null;
         var question78 = null;
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -923,6 +967,7 @@ $(document).ready(function () {
 
     //ação botão voltar seção 14
     $('#btnVoltar14').click(function(){
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -949,6 +994,7 @@ $(document).ready(function () {
         var question82 = null;
         var question83 = null;
         var question84 = null; 
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();
@@ -968,6 +1014,7 @@ $(document).ready(function () {
 
     //ação botão voltar seção 15
     $('#btnVoltar15').click(function(){
+        $('#section0').hide();
         $('#section1').hide();
         $('#section2').hide();
         $('#section3').hide();

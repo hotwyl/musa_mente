@@ -41,23 +41,23 @@
                         class="nav col-md-8 mb-2 justify-content-center mb-md-0"
                     >
                         <li>
-                            <a href="#" class="nav-link px-2 link-dark"
-                                >Teste</a
+                            <a class="nav-link px-2 link-dark" data-bs-toggle="modal" href="#modalTeste" role="button"
+                                ><i class="bi bi-search"></i> Teste</a
                             >
                         </li>
                         <li>
-                            <a href="#" class="nav-link px-2 link-dark"
-                                >Instruções</a
+                            <a class="nav-link px-2 link-dark" data-bs-toggle="modal" href="#modalInstrucao" role="button"
+                                ><i class="bi bi-book"></i> Instruções</a
                             >
                         </li>
                         <li>
-                            <a href="#" class="nav-link px-2 link-dark"
-                                >Ajuda</a
+                            <a class="nav-link px-2 link-dark" data-bs-toggle="modal" href="#modalAjuda" role="button"
+                                ><i class="bi bi-exclamation-triangle"></i> Ajuda</a
                             >
                         </li>
                         <li>
-                            <a href="#" class="nav-link px-2 link-dark"
-                                >Sobre</a
+                            <a class="nav-link px-2 link-dark" data-bs-toggle="modal" href="#modalSobre" role="button"
+                                ><i class="bi bi-question-circle"></i>  Sobre</a
                             >
                         </li>
                     </ul>
@@ -94,9 +94,102 @@
                         </ul>
                     </div>
             </section>
+
+            <section>
+
+                <!-- modal Teste-->
+                <div class="modal fade" id="modalTeste" aria-hidden="true" aria-labelledby="ModalToggleLabel" tabindex="-1">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="ModalToggleLabel"><i class="bi bi-search"></i> Teste</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil commodi incidunt harum repudiandae qui iste doloribus hic assumenda illum fugit! Quibusdam id nobis cupiditate cumque assumenda autem voluptatum dolorem quod?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- modal Instruções-->
+                <div class="modal fade" id="modalInstrucao" aria-hidden="true" aria-labelledby="ModalToggleLabel" tabindex="-1">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalToggleLabel"><i class="bi bi-book"></i> Instruções</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil commodi incidunt harum repudiandae qui iste doloribus hic assumenda illum fugit! Quibusdam id nobis cupiditate cumque assumenda autem voluptatum dolorem quod?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- modal Ajuda-->
+                <div class="modal fade" id="modalAjuda" aria-hidden="true" aria-labelledby="ModalToggleLabel" tabindex="-1">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="ModalToggleLabel"><i class="bi bi-exclamation-triangle"></i> Ajuda</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil commodi incidunt harum repudiandae qui iste doloribus hic assumenda illum fugit! Quibusdam id nobis cupiditate cumque assumenda autem voluptatum dolorem quod?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- modal Sobre-->
+                <div class="modal fade" id="modalSobre" aria-hidden="true" aria-labelledby="ModalToggleLabel" tabindex="-1">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="ModalToggleLabel"><i class="bi bi-question-circle"></i> Sobre</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil commodi incidunt harum repudiandae qui iste doloribus hic assumenda illum fugit! Quibusdam id nobis cupiditate cumque assumenda autem voluptatum dolorem quod?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+
+            </section>
         </header>
 
         <main class="container my-5">
+
+            <!--Seção 0-->
+            <section id="section0" lass="my-5">
+                <div class="card">
+                    <div class="card-header py-3">
+                        <h2 class="text-center">Seja Bem Vinda!</h2>
+                    </div>
+
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta illo exercitationem ullam adipisci quod error molestiae voluptas sequi accusantium, et expedita excepturi tempore voluptates deserunt, aperiam libero asperiores maxime sed?
+                    </div>
+
+                    <div class="card-footer py-3 text-center">
+                        <button type="button" class="btn btn-primary btn-lg mx-5" id="btnAvancar0"> Iniciar Teste </button>
+                    </div>
+                </div>
+            </section>
 
             <!--Seção 1-->
             <section id="section1" lass="my-5">
@@ -116,7 +209,7 @@
                         </div>
                         <!--Questão 2-->
                         <div class="pt-4" id="question2">
-                            <div><strong>B)Prefiro usar jeans e uma camisa confortável.</strong><br></div>
+                            <div><strong>B) Prefiro usar jeans e uma camisa confortável.</strong><br></div>
                             <div class="form-check form-check-inline"><input class="form-check-input" type="radio" id="s1q2o0" name="s1q2" value="0" /> <label class="form-check-label" for="s1q2o0">0</label></div>
                             <div class="form-check form-check-inline"><input class="form-check-input" type="radio" id="s1q2o1" name="s1q2" value="1" /> <label class="form-check-label" for="s1q2o1">1</label></div>
                             <div class="form-check form-check-inline"><input class="form-check-input" type="radio" id="s1q2o2" name="s1q2" value="2" /> <label class="form-check-label" for="s1q2o2">2</label></div>
@@ -124,7 +217,7 @@
                         </div>
                         <!--Questão 3-->
                         <div class="pt-4" id="question3">
-                            <div><strong>C) Minha aparê3cia não é nada convencional.</strong><br></div>
+                            <div><strong>C) Minha aparência não é nada convencional.</strong><br></div>
                             <div class="form-check form-check-inline"><input class="form-check-input" type="radio" id="s1q3o0" name="s1q3" value="0" /> <label class="form-check-label" for="s1q3o0">0</label></div>
                             <div class="form-check form-check-inline"><input class="form-check-input" type="radio" id="s1q3o1" name="s1q3" value="1" /> <label class="form-check-label" for="s1q3o1">1</label></div>
                             <div class="form-check form-check-inline"><input class="form-check-input" type="radio" id="s1q3o2" name="s1q3" value="2" /> <label class="form-check-label" for="s1q3o2">2</label></div>

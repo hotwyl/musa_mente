@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Verdana, Geneva, Tahoma, Helvetica, sans-serif;
+    /* background-color: #5f7c8a; */
+    /* background-image: linear-gradient(26deg, rgb(24, 54, 226), 34%, rgb(255, 0, 238)); */
+    /* min-height: 100vh;
+    min-width: 100vh;
+    padding: 40px; */
+}
+

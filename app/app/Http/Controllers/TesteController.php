@@ -22,4 +22,9 @@ class TesteController extends Controller
         return $this->service->testeApi($request->all());
     }
 
+    public function pdf()
+    {
+        return $this->service->pdf();
+    }
+
 }

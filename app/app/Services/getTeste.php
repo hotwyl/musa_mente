@@ -10,39 +10,45 @@ class getTeste
     public function getTeste($dados)
     {
         try {
+            $info['url'] = (string) Str::uuid();
+            $info['nome'] = !empty($dados['nome']) ? $dados['nome'] : '';
+            $info['email'] = !empty($dados['email']) ? $dados['email'] : '';
+            $info['fone'] = !empty($dados['fone']) ? $dados['fone'] : '';
+            $info['protocolo'] = date('z') . date('W') . date('t') . date('w') . date('d') . date('m') . date('Y') . date('H') . date('i') . date('s');
+            $info['data'] = date("Y-m-d H:i:s");
 
             foreach ($dados as $key => $value) {
                 if(substr($key, 0, 3) == "qst"){
-                    $val['questoes'][$key] = intval($value);
+                    $val[$key] = intval($value);
                 }
             }
 
-            $val['sessao']['sessao1'] = intval($val['questoes']['qst1']) + intval($val['questoes']['qst2']) + intval($val['questoes']['qst3']) + intval($val['questoes']['qst4']) + intval($val['questoes']['qst5']) + intval($val['questoes']['qst6']);
-            $val['sessao']['sessao2'] = intval($val['questoes']['qst7']) + intval($val['questoes']['qst8']) + intval($val['questoes']['qst9']) + intval($val['questoes']['qst10']) + intval($val['questoes']['qst11']) + intval($val['questoes']['qst12']);
-            $val['sessao']['sessao3'] = intval($val['questoes']['qst13']) + intval($val['questoes']['qst14']) + intval($val['questoes']['qst15']) + intval($val['questoes']['qst16']) + intval($val['questoes']['qst17']) + intval($val['questoes']['qst18']);
-            $val['sessao']['sessao4'] = intval($val['questoes']['qst19']) + intval($val['questoes']['qst20']) + intval($val['questoes']['qst21']) + intval($val['questoes']['qst22']) + intval($val['questoes']['qst23']) + intval($val['questoes']['qst24']);
-            $val['sessao']['sessao5'] = intval($val['questoes']['qst25']) + intval($val['questoes']['qst26']) + intval($val['questoes']['qst27']) + intval($val['questoes']['qst28']) + intval($val['questoes']['qst29']) + intval($val['questoes']['qst30']);
-            $val['sessao']['sessao6'] = intval($val['questoes']['qst31']) + intval($val['questoes']['qst32']) + intval($val['questoes']['qst33']) + intval($val['questoes']['qst34']) + intval($val['questoes']['qst35']) + intval($val['questoes']['qst36']);
-            $val['sessao']['sessao7'] = intval($val['questoes']['qst37']) + intval($val['questoes']['qst38']) + intval($val['questoes']['qst39']) + intval($val['questoes']['qst40']) + intval($val['questoes']['qst41']) + intval($val['questoes']['qst42']);
-            $val['sessao']['sessao8'] = intval($val['questoes']['qst43']) + intval($val['questoes']['qst44']) + intval($val['questoes']['qst45']) + intval($val['questoes']['qst46']) + intval($val['questoes']['qst47']) + intval($val['questoes']['qst48']);
-            $val['sessao']['sessao9'] = intval($val['questoes']['qst49']) + intval($val['questoes']['qst50']) + intval($val['questoes']['qst51']) + intval($val['questoes']['qst52']) + intval($val['questoes']['qst53']) + intval($val['questoes']['qst54']);
-            $val['sessao']['sessao10'] = intval($val['questoes']['qst55']) + intval($val['questoes']['qst56']) + intval($val['questoes']['qst57']) + intval($val['questoes']['qst58']) + intval($val['questoes']['qst59']) + intval($val['questoes']['qst60']);
-            $val['sessao']['sessao11'] = intval($val['questoes']['qst61']) + intval($val['questoes']['qst62']) + intval($val['questoes']['qst63']) + intval($val['questoes']['qst64']) + intval($val['questoes']['qst65']) + intval($val['questoes']['qst66']);
-            $val['sessao']['sessao12'] = intval($val['questoes']['qst67']) + intval($val['questoes']['qst68']) + intval($val['questoes']['qst69']) + intval($val['questoes']['qst70']) + intval($val['questoes']['qst71']) + intval($val['questoes']['qst72']);
-            $val['sessao']['sessao13'] = intval($val['questoes']['qst73']) + intval($val['questoes']['qst74']) + intval($val['questoes']['qst75']) + intval($val['questoes']['qst76']) + intval($val['questoes']['qst77']) + intval($val['questoes']['qst78']);
-            $val['sessao']['sessao14'] = intval($val['questoes']['qst79']) + intval($val['questoes']['qst80']) + intval($val['questoes']['qst81']) + intval($val['questoes']['qst82']) + intval($val['questoes']['qst83']) + intval($val['questoes']['qst84']);
+            $info['sessao1'] = intval($val['qst1']) + intval($val['qst2']) + intval($val['qst3']) + intval($val['qst4']) + intval($val['qst5']) + intval($val['qst6']);
+            $info['sessao2'] = intval($val['qst7']) + intval($val['qst8']) + intval($val['qst9']) + intval($val['qst10']) + intval($val['qst11']) + intval($val['qst12']);
+            $info['sessao3'] = intval($val['qst13']) + intval($val['qst14']) + intval($val['qst15']) + intval($val['qst16']) + intval($val['qst17']) + intval($val['qst18']);
+            $info['sessao4'] = intval($val['qst19']) + intval($val['qst20']) + intval($val['qst21']) + intval($val['qst22']) + intval($val['qst23']) + intval($val['qst24']);
+            $info['sessao5'] = intval($val['qst25']) + intval($val['qst26']) + intval($val['qst27']) + intval($val['qst28']) + intval($val['qst29']) + intval($val['qst30']);
+            $info['sessao6'] = intval($val['qst31']) + intval($val['qst32']) + intval($val['qst33']) + intval($val['qst34']) + intval($val['qst35']) + intval($val['qst36']);
+            $info['sessao7'] = intval($val['qst37']) + intval($val['qst38']) + intval($val['qst39']) + intval($val['qst40']) + intval($val['qst41']) + intval($val['qst42']);
+            $info['sessao8'] = intval($val['qst43']) + intval($val['qst44']) + intval($val['qst45']) + intval($val['qst46']) + intval($val['qst47']) + intval($val['qst48']);
+            $info['sessao9'] = intval($val['qst49']) + intval($val['qst50']) + intval($val['qst51']) + intval($val['qst52']) + intval($val['qst53']) + intval($val['qst54']);
+            $info['sessao10'] = intval($val['qst55']) + intval($val['qst56']) + intval($val['qst57']) + intval($val['qst58']) + intval($val['qst59']) + intval($val['qst60']);
+            $info['sessao11'] = intval($val['qst61']) + intval($val['qst62']) + intval($val['qst63']) + intval($val['qst64']) + intval($val['qst65']) + intval($val['qst66']);
+            $info['sessao12'] = intval($val['qst67']) + intval($val['qst68']) + intval($val['qst69']) + intval($val['qst70']) + intval($val['qst71']) + intval($val['qst72']);
+            $info['sessao13'] = intval($val['qst73']) + intval($val['qst74']) + intval($val['qst75']) + intval($val['qst76']) + intval($val['qst77']) + intval($val['qst78']);
+            $info['sessao14'] = intval($val['qst79']) + intval($val['qst80']) + intval($val['qst81']) + intval($val['qst82']) + intval($val['qst83']) + intval($val['qst84']);
 
-            $val['teste']['atena'] = intval($val['questoes']['qst6']) + intval($val['questoes']['qst7']) + intval($val['questoes']['qst14']) + intval($val['questoes']['qst21']) + intval($val['questoes']['qst28']) + intval($val['questoes']['qst34']) + intval($val['questoes']['qst42']) + intval($val['questoes']['qst45']) + intval($val['questoes']['qst52']) + intval($val['questoes']['qst59']) + intval($val['questoes']['qst61']) + intval($val['questoes']['qst69']) + intval($val['questoes']['qst78']) + intval($val['questoes']['qst79']);
-            $val['teste']['afrodite'] = intval($val['questoes']['qst5']) + intval($val['questoes']['qst9']) + intval($val['questoes']['qst17']) + intval($val['questoes']['qst20']) + intval($val['questoes']['qst30']) + intval($val['questoes']['qst31']) + intval($val['questoes']['qst39']) + intval($val['questoes']['qst44']) + intval($val['questoes']['qst53']) + intval($val['questoes']['qst56']) + intval($val['questoes']['qst64']) + intval($val['questoes']['qst72']) + intval($val['questoes']['qst77']) + intval($val['questoes']['qst80']);
-            $val['teste']['persefone'] = intval($val['questoes']['qst3']) + intval($val['questoes']['qst10']) + intval($val['questoes']['qst16']) + intval($val['questoes']['qst24']) + intval($val['questoes']['qst25']) + intval($val['questoes']['qst35']) + intval($val['questoes']['qst37']) + intval($val['questoes']['qst48']) + intval($val['questoes']['qst54']) + intval($val['questoes']['qst55']) + intval($val['questoes']['qst62']) + intval($val['questoes']['qst70']) + intval($val['questoes']['qst75']) + intval($val['questoes']['qst81']);
-            $val['teste']['artemis'] = intval($val['questoes']['qst2']) + intval($val['questoes']['qst8']) + intval($val['questoes']['qst18']) + intval($val['questoes']['qst19']) + intval($val['questoes']['qst29']) + intval($val['questoes']['qst33']) + intval($val['questoes']['qst40']) + intval($val['questoes']['qst47']) + intval($val['questoes']['qst49']) + intval($val['questoes']['qst57']) + intval($val['questoes']['qst66']) + intval($val['questoes']['qst68']) + intval($val['questoes']['qst76']) + intval($val['questoes']['qst82']);
-            $val['teste']['demeter'] = intval($val['questoes']['qst1']) + intval($val['questoes']['qst12']) + intval($val['questoes']['qst15']) + intval($val['questoes']['qst22']) + intval($val['questoes']['qst27']) + intval($val['questoes']['qst32']) + intval($val['questoes']['qst41']) + intval($val['questoes']['qst46']) + intval($val['questoes']['qst50']) + intval($val['questoes']['qst60']) + intval($val['questoes']['qst65']) + intval($val['questoes']['qst67']) + intval($val['questoes']['qst73']) + intval($val['questoes']['qst83']);
-            $val['teste']['hera'] = intval($val['questoes']['qst4']) + intval($val['questoes']['qst11']) + intval($val['questoes']['qst13']) + intval($val['questoes']['qst23']) + intval($val['questoes']['qst26']) + intval($val['questoes']['qst36']) + intval($val['questoes']['qst38']) + intval($val['questoes']['qst43']) + intval($val['questoes']['qst51']) + intval($val['questoes']['qst58']) + intval($val['questoes']['qst63']) + intval($val['questoes']['qst71']) + intval($val['questoes']['qst74']) + intval($val['questoes']['qst84']);
+            $info['atena'] = intval($val['qst6']) + intval($val['qst7']) + intval($val['qst14']) + intval($val['qst21']) + intval($val['qst28']) + intval($val['qst34']) + intval($val['qst42']) + intval($val['qst45']) + intval($val['qst52']) + intval($val['qst59']) + intval($val['qst61']) + intval($val['qst69']) + intval($val['qst78']) + intval($val['qst79']);
+            $info['afrodite'] = intval($val['qst5']) + intval($val['qst9']) + intval($val['qst17']) + intval($val['qst20']) + intval($val['qst30']) + intval($val['qst31']) + intval($val['qst39']) + intval($val['qst44']) + intval($val['qst53']) + intval($val['qst56']) + intval($val['qst64']) + intval($val['qst72']) + intval($val['qst77']) + intval($val['qst80']);
+            $info['persefone'] = intval($val['qst3']) + intval($val['qst10']) + intval($val['qst16']) + intval($val['qst24']) + intval($val['qst25']) + intval($val['qst35']) + intval($val['qst37']) + intval($val['qst48']) + intval($val['qst54']) + intval($val['qst55']) + intval($val['qst62']) + intval($val['qst70']) + intval($val['qst75']) + intval($val['qst81']);
+            $info['artemis'] = intval($val['qst2']) + intval($val['qst8']) + intval($val['qst18']) + intval($val['qst19']) + intval($val['qst29']) + intval($val['qst33']) + intval($val['qst40']) + intval($val['qst47']) + intval($val['qst49']) + intval($val['qst57']) + intval($val['qst66']) + intval($val['qst68']) + intval($val['qst76']) + intval($val['qst82']);
+            $info['demeter'] = intval($val['qst1']) + intval($val['qst12']) + intval($val['qst15']) + intval($val['qst22']) + intval($val['qst27']) + intval($val['qst32']) + intval($val['qst41']) + intval($val['qst46']) + intval($val['qst50']) + intval($val['qst60']) + intval($val['qst65']) + intval($val['qst67']) + intval($val['qst73']) + intval($val['qst83']);
+            $info['hera'] = intval($val['qst4']) + intval($val['qst11']) + intval($val['qst13']) + intval($val['qst23']) + intval($val['qst26']) + intval($val['qst36']) + intval($val['qst38']) + intval($val['qst43']) + intval($val['qst51']) + intval($val['qst58']) + intval($val['qst63']) + intval($val['qst71']) + intval($val['qst74']) + intval($val['qst84']);
 
-            $val['pontuacao']['geral'] = intval($val['sessao']['sessao1']) + intval($val['sessao']['sessao2']) + intval($val['sessao']['sessao3']) + intval($val['sessao']['sessao4']) + intval($val['sessao']['sessao5']) + intval($val['sessao']['sessao6']) + intval($val['sessao']['sessao7']) + intval($val['sessao']['sessao8']) + intval($val['sessao']['sessao9']) + intval($val['sessao']['sessao10']) + intval($val['sessao']['sessao11']) + intval($val['sessao']['sessao12']) + intval($val['sessao']['sessao13']) + intval($val['sessao']['sessao14']);
-            $val['pontuacao']['Total'] = intval($val['teste']['atena']) + intval($val['teste']['afrodite']) + intval($val['teste']['persefone']) + intval($val['teste']['artemis']) + intval($val['teste']['demeter']) + intval($val['teste']['hera']);
+            $info['geral'] = intval($info['sessao1']) + intval($info['sessao2']) + intval($info['sessao3']) + intval($info['sessao4']) + intval($info['sessao5']) + intval($info['sessao6']) + intval($info['sessao7']) + intval($info['sessao8']) + intval($info['sessao9']) + intval($info['sessao10']) + intval($info['sessao11']) + intval($info['sessao12']) + intval($info['sessao13']) + intval($info['sessao14']);
+            $info['total'] = intval($info['atena']) + intval($info['afrodite']) + intval($info['persefone']) + intval($info['artemis']) + intval($info['demeter']) + intval($info['hera']);
 
-            return $val;
+            return $info;
         } catch (\Throwable $th) {
             throw $th;
         }

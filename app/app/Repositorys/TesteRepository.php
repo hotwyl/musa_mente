@@ -10,15 +10,26 @@ use Illuminate\Support\Facades\Storage;
 
 class TesteRepository
 {
-    public function __construct()
+    protected $teste;
+
+    public function __construct(Teste $teste)
     {
-        ini_set('max_execution_time', 999);
-        ini_set('memory_limit', '256M');
-        ini_set('max_input_time', 999);
+        $this->repository = $teste;
     }
 
     public function testeApi($request)
     {
-        return $request;
+        return $this->repository->create($request);
+    }
+
+    public function pdf($url)
+    {
+        $uuid = $url[1] ? $url[1] : false;
+        $protocolo = $url[2] ? $url[2] : false;
+        if (empty($uuid) || empty($protocolo) ) {
+            return null;
+        } else {
+            return $this->repository->where('url', $uuid)->where('protocolo', $protocolo)->first();
+        }
     }
 }

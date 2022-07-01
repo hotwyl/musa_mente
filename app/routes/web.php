@@ -14,8 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(TesteController::class)->group(function () {
+
+    Route::get('/', 'index')->name('cliente.index');
+
+    Route::post('/', 'store')->name('cliente.store');
+
+    Route::get('/admin', 'admin')->name('admin');
+
+    Route::get('/{chave}/{protocolo}', 'show')->name('cliente.show');
+
 });
 
-Route::get('{uuid}/{protocolo}', [TesteController::class, 'pdf']);
+Route::fallback(function ($err) {
+
+    return view("404");
+});

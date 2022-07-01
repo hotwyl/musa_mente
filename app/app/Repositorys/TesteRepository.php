@@ -17,19 +17,36 @@ class TesteRepository
         $this->repository = $teste;
     }
 
-    public function testeApi($request)
+    public function buscarTeste($url)
     {
-        return $this->repository->create($request);
+        try {
+            $chave = $url[1] ? $url[1] : false;
+            $protocolo = $url[2] ? $url[2] : false;
+            if (empty($chave) || empty($protocolo)) {
+                return null;
+            } else {
+                return $this->repository->where('deletado', 0)->where('chave', $chave)->where('protocolo', $protocolo)->first();
+            }
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
-    public function pdf($url)
+    public function listarTeste()
     {
-        $uuid = $url[1] ? $url[1] : false;
-        $protocolo = $url[2] ? $url[2] : false;
-        if (empty($uuid) || empty($protocolo) ) {
-            return null;
-        } else {
-            return $this->repository->where('url', $uuid)->where('protocolo', $protocolo)->first();
+        try {
+            return $this->repository->where('deletado', 0)->orderBy('data')->get();
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
+
+    public function salvarTeste($request)
+    {
+        try {
+            return $this->repository->create($request);
+        } catch (\Throwable $th) {
+            throw $th;
         }
     }
 }

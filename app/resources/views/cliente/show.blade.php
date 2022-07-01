@@ -1,4 +1,6 @@
-@extends('cliente.layout')
+@extends('layout')
+
+@section('title', 'Resultado Teste')
 
 @section('content')
 
@@ -10,7 +12,7 @@
 
     <section class="my-5">
         <div class="card">
-
+            <div class="card-header"></div>
             <div class="card-body p-5">
                 <div class="pb-5">
                     <div id="grafico" style="width: 900px; height: 500px;"></div>

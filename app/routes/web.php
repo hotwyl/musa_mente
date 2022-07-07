@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(TesteController::class)->group(function () {
 
+    Route::get('/fakers', 'fake')->name('fake');
+
     Route::get('/', 'index')->name('cliente.index');
 
     Route::post('/', 'store')->name('cliente.store');

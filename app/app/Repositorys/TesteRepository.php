@@ -35,7 +35,7 @@ class TesteRepository
     public function listarTeste()
     {
         try {
-            return $this->repository->where('deletado', 0)->orderBy('data')->get();
+            return $this->repository->where('deletado', 0)->orderBy('data', 'desc')->get();
         } catch (\Throwable $th) {
             throw $th;
         }

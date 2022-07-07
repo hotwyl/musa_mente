@@ -15,10 +15,10 @@ class CreateTestesTable extends Migration
     {
         Schema::create('testes', function (Blueprint $table) {
             $table->id();
-            $table->string('chave');
-            $table->string('protocolo');
+            $table->string('chave')->unique();
+            $table->string('protocolo')->unique();
             $table->string('nome');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('fone')->nullable();
             $table->string('data');
             $table->string('atena');

@@ -25,11 +25,9 @@ class TesteService
         try {
             $val = $this->getTeste->getTeste($request);
 
-            //$val['geraResult'] = $this->geraResult->geraResult($val);
-
             $response = $this->repository->salvarTeste($val);
 
-            return response()->json($val, 200);
+            return response()->json($response, 200);
         } catch (\Exception $ex) {
             return response()->json($ex->getMessage(), 401);
         }
@@ -54,36 +52,42 @@ class TesteService
 
     public function index()
     {
-        !empty($_GET["nome"]) ? $var['nome'] = strip_tags(addslashes(trim(htmlspecialchars($_GET["nome"])))):'';
-        !empty($_GET["email"]) ? $var['email'] = strip_tags(addslashes(trim(htmlspecialchars($_GET["email"])))):'';
-        !empty($_GET["fone"]) ? $var['fone'] = strip_tags(addslashes(trim(htmlspecialchars($_GET["fone"])))):'';
 
-        $var['opt1'] = ["text"=>"Raramente", "val"=>-1];
-        $var['opt2'] = ["text"=>"As vezes", "val"=>-1];
-        $var['opt3'] = ["text"=>"De vez em quando", "val"=>-2];
-        $var['opt4'] = ["text"=>"Maior parte das vezes", "val"=>-3];
+        /**
+         * http://127.0.0.1:8000/?nome=tester&email=teste@teste.com
+         */
+        !empty($_GET["nome"]) ? $var['nome'] = strip_tags(addslashes(trim(htmlspecialchars($_GET["nome"])))) : '';
+        !empty($_GET["email"]) ? $var['email'] = strip_tags(addslashes(trim(htmlspecialchars($_GET["email"])))) : '';
+        !empty($_GET["fone"]) ? $var['fone'] = strip_tags(addslashes(trim(htmlspecialchars($_GET["fone"])))) : '';
+
+        $var['opt1'] = ["text" => "Raramente", "val" => -1];
+        $var['opt2'] = ["text" => "As vezes", "val" => 1];
+        $var['opt3'] = ["text" => "De vez em quando", "val" => 2];
+        $var['opt4'] = ["text" => "Maior parte das vezes", "val" => 3];
 
         return view('cliente.index', [
-                    'dad' => $var
-                ]);
+            'dad' => $var
+        ]);
     }
 
     public function store($request)
     {
+        try {
 
-        // try {
-        //     $response = $this->repository->salvarTeste($request);
+            $val = $this->getTeste->getTeste($request);
 
-        //     if (!in_array($response, [null, false])) {
-        //         return view('cliente.obg', [
-        //             'resultado' => $response
-        //         ]);
-        //     } else {
-        //         return view('404');
-        //     }
-        // } catch (\Exception $ex) {
-        //     return response()->json($ex->getMessage(), 401);
-        // }
+            $response = $this->repository->salvarTeste($val);
+
+            if (!in_array($response, [null, false])) {
+                return view('cliente.obg', [
+                    'resultado' => $response
+                ]);
+            } else {
+                return view('404');
+            }
+        } catch (\Exception $ex) {
+            return response()->json($ex->getMessage(), 401);
+        }
     }
 
     public function admin()
@@ -100,6 +104,30 @@ class TesteService
             }
         } catch (\Exception $ex) {
             return response()->json($ex->getMessage(), 401);
+        }
+    }
+
+    public function fake()
+    {
+        $data = file_get_contents('http://dev.3wonline.com/api/public/api/json/fakePessoa');
+        $dadosSite = json_decode($data, true);
+
+        foreach ($dadosSite as $key => $value) {
+            $val=[-1, 1, 2, 3];
+            for ($i=1; $i <= 84 ; $i++) {
+                $num = rand(0,3);
+                $post["qst$i"] = $val[$num];
+            }
+
+            $post["nome"] = $value['nome'];
+            $post["email"] = $value['email'];
+            $post["fone"] = $value['celular'];
+
+            if($val = $this->getTeste->getTeste($post)){
+                if($response = $this->repository->salvarTeste($val)){
+                    $fake[] = $response;
+                };
+            };
         }
     }
 }

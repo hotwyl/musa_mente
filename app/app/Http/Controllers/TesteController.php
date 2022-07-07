@@ -41,4 +41,9 @@ class TesteController extends Controller
     {
         return $this->service->admin();
     }
+
+    public function fake()
+    {
+        return $this->service->fake();
+    }
 }

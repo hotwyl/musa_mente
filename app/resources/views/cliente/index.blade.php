@@ -4,11 +4,12 @@
 
 @section('content')
 
-@include('cliente.nav')
+    @include('cliente.nav')
+
+    @include('includes.alerts')
 
     <form id="testForm" action="{{ route('cliente.store') }}" class="needs-validation" novalidate method="post"
         autocomplete="off">
-
         @csrf
 
         <!--Seção 0-->
@@ -1674,6 +1675,7 @@
                 </div>
 
                 <div class="card-body">
+
                     <div class="pt-3" id="question85">
                         <label for="basic-url" class="form-label">Informe seu Nome.</label>
                         <div class="input-group mb-3">
@@ -1704,6 +1706,7 @@
                                 aria-label="fone" aria-describedby="fone">
                         </div>
                     </div>
+
                 </div>
 
                 <div class="card-footer py-3 text-center">

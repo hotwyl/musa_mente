@@ -129,5 +129,7 @@ class TesteService
                 };
             };
         }
+
+        return redirect()->route('cliente.index');
     }
 }

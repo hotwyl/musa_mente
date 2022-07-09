@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTesteRequest;
+use App\Http\Requests\TesteRequest;
 use App\Http\Requests\UpdateTesteRequest;
 use App\Services\TesteService;
 
@@ -32,7 +33,7 @@ class TesteController extends Controller
         return $this->service->index();
     }
 
-    public function store(Request $request)
+    public function store(TesteRequest $request)
     {
         return $this->service->store($request->all());
     }

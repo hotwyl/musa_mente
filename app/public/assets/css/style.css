@@ -1,12 +1,1 @@
-* {
-    padding: 0;
-    margin: 0;
-    border: none;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, Verdana, Geneva, Tahoma, Helvetica, sans-serif;
-    max-width: 1024px;
-    margin: auto;
-}
+*{border:none;box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,Verdana,Geneva,Tahoma,Helvetica,sans-serif;margin:auto;max-width:1024px}

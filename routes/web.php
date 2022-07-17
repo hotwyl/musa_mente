@@ -16,18 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('envio-email', function () {
-    $user = new stdClass();
-    $user->name = 'Fulano da Silva';
-    $user->email = 'contato@olhavenda.com';
-    //return new NewTest($user);
-    Mail::send(new NewTest($user));
-});
-
 Route::controller(TesteController::class)->group(function () {
 
     Route::get('/fakers', 'fake')->name('fake');

@@ -512,16 +512,16 @@
                         <div><strong>A) Eu tinha muitas brincadeiras secretas e muitos mundos imaginários.</strong><br>
                         </div>
                         <div class="form-check form-check-inline"><input class="form-check-input" type="radio"
-                                id="s5q19o0" name="qst25" value={{ $dad['opt1']['val'] }} /> <label
+                                id="qst25o0" name="qst25" value={{ $dad['opt1']['val'] }} /> <label
                                 class="form-check-label" for="qst25o0">{{ $dad['opt1']['text'] }} </label></div>
                         <div class="form-check form-check-inline"><input class="form-check-input" type="radio"
-                                id="s5q19o1" name="qst25" value={{ $dad['opt2']['val'] }} /> <label
+                                id="qst25o1" name="qst25" value={{ $dad['opt2']['val'] }} /> <label
                                 class="form-check-label" for="qst25o1">{{ $dad['opt2']['text'] }} </label></div>
                         <div class="form-check form-check-inline"><input class="form-check-input" type="radio"
-                                id="s5q19o2" name="qst25" value={{ $dad['opt3']['val'] }} /> <label
+                                id="qst25o2" name="qst25" value={{ $dad['opt3']['val'] }} /> <label
                                 class="form-check-label" for="qst25o2">{{ $dad['opt3']['text'] }} </label></div>
                         <div class="form-check form-check-inline"><input class="form-check-input" type="radio"
-                                id="s5q19o3" name="qst25" value={{ $dad['opt4']['val'] }} /> <label
+                                id="qst25o3" name="qst25" value={{ $dad['opt4']['val'] }} /> <label
                                 class="form-check-label" for="qst25o3">{{ $dad['opt4']['text'] }} </label></div>
                     </div>
                     <!--Questão 26-->
@@ -1295,16 +1295,16 @@
                         <div><strong>F) Festas me deixam tensas, não vou muito a elas.</strong><br></div>
                         <div class="form-check form-check-inline"><input class="form-check-input" type="radio"
                                 id="qst66o0" name="qst66" value={{ $dad['opt1']['val'] }} /> <label
-                                class="form-check-label" for="qst65o0">{{ $dad['opt1']['text'] }} </label></div>
+                                class="form-check-label" for="qst66o0">{{ $dad['opt1']['text'] }} </label></div>
                         <div class="form-check form-check-inline"><input class="form-check-input" type="radio"
                                 id="qst66o1" name="qst66" value={{ $dad['opt2']['val'] }} /> <label
-                                class="form-check-label" for="qst65o1">{{ $dad['opt2']['text'] }} </label></div>
+                                class="form-check-label" for="qst66o1">{{ $dad['opt2']['text'] }} </label></div>
                         <div class="form-check form-check-inline"><input class="form-check-input" type="radio"
                                 id="qst66o2" name="qst66" value={{ $dad['opt3']['val'] }} /> <label
-                                class="form-check-label" for="qst65o2">{{ $dad['opt3']['text'] }} </label></div>
+                                class="form-check-label" for="qst66o2">{{ $dad['opt3']['text'] }} </label></div>
                         <div class="form-check form-check-inline"><input class="form-check-input" type="radio"
                                 id="qst66o3" name="qst66" value={{ $dad['opt4']['val'] }} /> <label
-                                class="form-check-label" for="qst65o3">{{ $dad['opt4']['text'] }} </label></div>
+                                class="form-check-label" for="qst66o3">{{ $dad['opt4']['text'] }} </label></div>
                     </div>
                 </div>
 
@@ -1680,9 +1680,15 @@
                         <label for="basic-url" class="form-label">Informe seu Nome.</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="bi bi-envelope-open-fill"></i></span>
-                            <input type="text" class="form-control" name="nome" id="nome"
-                                value="{{ $dad['nome'] ?? old('nome') }}" placeholder="Como devemos te chamar?"
-                                aria-label="nome" aria-describedby="nome" required>
+                            @if(!empty($dad['nome']))
+                                <input type="text" class="form-control" name="nome" id="nome"
+                                    value="{{ $dad['nome'] }}" placeholder="Como devemos te chamar?"
+                                    aria-label="nome" aria-describedby="nome" required>
+                            @else
+                                <input type="text" class="form-control" name="nome" id="nome"
+                                    placeholder="Como devemos te chamar?" aria-label="nome" aria-describedby="nome"
+                                    required>
+                            @endif
                         </div>
                     </div>
                     <div class="pt-3" id="question86">
@@ -1690,10 +1696,15 @@
                             resultado do teste.</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="bi bi-envelope-open-fill"></i></span>
-                            <input type="email" class="form-control" name="email" id="email"
-                                value="{{ $dad['email'] ?? old('email') }}"
-                                placeholder="Informe um endereço de email" aria-label="email" aria-describedby="email"
-                                required>
+                            @if(!empty($dad['email']))
+                                <input type="email" class="form-control" name="email" id="email"
+                                    value="{{ $dad['email'] }}" placeholder="Informe um endereço de email"
+                                    aria-label="email" aria-describedby="email" required>
+                            @else
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Informe um endereço de email" aria-label="email"
+                                    aria-describedby="email" required>
+                            @endif
                         </div>
                     </div>
                     <div class="pt-3" id="question87">
@@ -1701,16 +1712,22 @@
                             WhatsApp.</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="bi bi-envelope-open-fill"></i></span>
-                            <input type="text" class="form-control" name="fone" id="fone"
-                                value="{{ $dad['fone'] ?? old('fone') }}" placeholder="Informe um numero telefone"
-                                aria-label="fone" aria-describedby="fone">
+                            @if(!empty($dad['fone']))
+                                <input type="text" class="form-control" name="fone" id="fone"
+                                    value="{{ $dad['fone'] }}" placeholder="Informe um numero telefone"
+                                    aria-label="fone" aria-describedby="fone">
+                            @else
+                                <input type="text" class="form-control" name="fone" id="fone"
+                                    placeholder="Informe um numero telefone" aria-label="fone"
+                                    aria-describedby="fone">
+                            @endif
                         </div>
                     </div>
 
                 </div>
 
                 <div class="card-footer py-3 text-center">
-                    <button type="submit" class="btn btn-primary btn-lg mx-5" id="finalizar"> Finalizar <i
+                    <button type="submit" class="btn btn-primary btn-lg mx-5"> Finalizar <i
                             class="bi bi-arrow-right-short"></i></button>
                 </div>
             </div>

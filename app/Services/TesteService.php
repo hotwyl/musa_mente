@@ -6,18 +6,18 @@ use App\Repositorys\TesteRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Services\{getTeste, geraResult};
+use App\Services\{getTeste, sendMail};
 use Illuminate\Routing\Route;
 
 class TesteService
 {
     protected $repository;
 
-    public function __construct(TesteRepository $repository, getTeste $getTeste, geraResult $geraResult)
+    public function __construct(TesteRepository $repository, getTeste $getTeste, sendMail $sendMail)
     {
         $this->repository = $repository;
         $this->getTeste = $getTeste;
-        $this->geraResult = $geraResult;
+        $this->sendMail = $sendMail;
     }
 
     public function testeApi($request)
@@ -79,6 +79,13 @@ class TesteService
             $response = $this->repository->salvarTeste($val);
 
             if (!in_array($response, [null, false])) {
+
+                dd($response);
+
+                $send = $this->sendMail->getTeste($request);
+
+
+
                 return view('cliente.obg', [
                     'resultado' => $response
                 ]);

@@ -16,7 +16,7 @@ class TesteRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => "nullable|min:5|max:100",
+            'nome' => "required|min:5|max:100",
             'email' => "required|email:rfc,dns|unique:testes,email",
             'fone' => "nullable",
         ];

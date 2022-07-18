@@ -1998,13 +1998,14 @@ $(document).ready(function() {
     // ação botão finalizar seção 15
     $('#finalizar').click(function() {
         try {
-            var section15 = null;
-            var resultadoTeste = null;
+            let arr = [undefined, false, null, "", " "];
+            let nome = $("input[name='nome']").val();
+            let email = $("input[name='email']").val();
 
-            if ($("input[name='nome']").val() == undefined) {
+            if (jQuery.inArray(nome, arr) != -1) {
                 Swal.fire({
                     title: 'Nome não identificado',
-                    text: 'Informe um email para receber o resultado do teste.',
+                    text: 'Informe um NOME válido para receber o resultado do teste.',
                     icon: 'warning',
                     confirmButtonText: 'Ok',
                     confirmButtonColor: '#3085d6',
@@ -2012,10 +2013,33 @@ $(document).ready(function() {
                 return false;
             }
 
-            if ($("input[name='email']").val() == undefined) {
+            if (nome.length < 5) {
+                Swal.fire({
+                    title: 'Nome Inválido',
+                    text: 'Informe um NOME válido com mais de 5 caracteres.',
+                    icon: 'warning',
+                    confirmButtonText: 'Ok',
+                    confirmButtonColor: '#3085d6',
+                })
+                return false;
+            }
+
+            if (!isEmail(email)) {
                 Swal.fire({
                     title: 'Endereço de Email não identificado',
-                    text: 'Informe um email para receber o resultado do teste.',
+                    text: 'Informe um EMAIL válido para receber o resultado do teste.',
+                    icon: 'warning',
+                    confirmButtonText: 'Ok',
+                    confirmButtonColor: '#3085d6',
+                })
+                return false;
+            }
+
+
+            if (jQuery.inArray(email, arr) != -1) {
+                Swal.fire({
+                    title: 'Endereço de Email inválido',
+                    text: 'Informe um EMAIL válido para receber o resultado do teste.',
                     icon: 'warning',
                     confirmButtonText: 'Ok',
                     confirmButtonColor: '#3085d6',
@@ -2044,4 +2068,10 @@ $(document).ready(function() {
             console.log(error);
         }
     });
+
+    function isEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+    }
+
 });

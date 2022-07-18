@@ -49,4 +49,22 @@ class TesteRepository
             throw $th;
         }
     }
+
+    public function psq_mail($request)
+    {
+        try {
+            return $this->repository->where('deletado', 0)->where('email', $request)->first();
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
+
+    // public function send_mail($request)
+    // {
+    //     try {
+    //         return $this->repository->where('deletado', 0)->where('email', $request)->first();
+    //     } catch (\Throwable $th) {
+    //         throw $th;
+    //     }
+    // }
 }

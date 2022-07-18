@@ -1679,13 +1679,13 @@
                     <div class="pt-3" id="question85">
                         <label for="basic-url" class="form-label">Informe seu Nome.</label>
                         <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="bi bi-envelope-open-fill"></i></span>
+                            <span class="input-group-text"><i class="bi bi-person"></i></span>
                             @if(!empty($dad['nome']))
                                 <input type="text" class="form-control" name="nome" id="nome"
                                     value="{{ $dad['nome'] }}" placeholder="Como devemos te chamar?"
                                     aria-label="nome" aria-describedby="nome" required>
                             @else
-                                <input type="text" class="form-control" name="nome" id="nome"
+                                <input type="text" class="form-control validated" name="nome" id="nome"
                                     placeholder="Como devemos te chamar?" aria-label="nome" aria-describedby="nome"
                                     required>
                             @endif
@@ -1697,7 +1697,7 @@
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="bi bi-envelope-open-fill"></i></span>
                             @if(!empty($dad['email']))
-                                <input type="email" class="form-control" name="email" id="email"
+                                <input type="email" class="form-control validated" name="email" id="email"
                                     value="{{ $dad['email'] }}" placeholder="Informe um endereço de email"
                                     aria-label="email" aria-describedby="email" required>
                             @else
@@ -1711,7 +1711,7 @@
                         <label for="basic-url" class="form-label">Informe seu telefone para contato. Preferencialmente
                             WhatsApp.</label>
                         <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="bi bi-envelope-open-fill"></i></span>
+                            <span class="input-group-text"><i class="bi bi-telephone-forward-fill"></i></span>
                             @if(!empty($dad['fone']))
                                 <input type="text" class="form-control" name="fone" id="fone"
                                     value="{{ $dad['fone'] }}" placeholder="Informe um numero telefone"
@@ -1727,7 +1727,7 @@
                 </div>
 
                 <div class="card-footer py-3 text-center">
-                    <button type="submit" class="btn btn-primary btn-lg mx-5"> Finalizar <i
+                    <button type="submit" class="btn btn-primary btn-lg mx-5" id="finalizar"> Finalizar <i
                             class="bi bi-arrow-right-short"></i></button>
                 </div>
             </div>

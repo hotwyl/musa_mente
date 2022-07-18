@@ -80,15 +80,15 @@ class TesteService
 
             if (!in_array($response, [null, false])) {
 
-                dd($response);
+                $send = $this->sendMail->mailResult($response);
 
-                $send = $this->sendMail->getTeste($request);
-
-
-
-                return view('cliente.obg', [
-                    'resultado' => $response
-                ]);
+                if ($send == true) {
+                    return view('cliente.obg', [
+                        'resultado' => $response
+                    ]);
+                } else {
+                    return redirect()->back();
+                }
             } else {
                 return view('404');
             }
@@ -120,9 +120,9 @@ class TesteService
         $dadosSite = json_decode($data, true);
 
         foreach ($dadosSite as $key => $value) {
-            $val=[-1, 1, 2, 3];
-            for ($i=1; $i <= 84 ; $i++) {
-                $num = rand(0,3);
+            $val = [-1, 1, 2, 3];
+            for ($i = 1; $i <= 84; $i++) {
+                $num = rand(0, 3);
                 $post["qst$i"] = $val[$num];
             }
 
@@ -130,8 +130,8 @@ class TesteService
             $post["email"] = $value['email'];
             $post["fone"] = $value['celular'];
 
-            if($val = $this->getTeste->getTeste($post)){
-                if($response = $this->repository->salvarTeste($val)){
+            if ($val = $this->getTeste->getTeste($post)) {
+                if ($response = $this->repository->salvarTeste($val)) {
                     $fake[] = $response;
                 };
             };

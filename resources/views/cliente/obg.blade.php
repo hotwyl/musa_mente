@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Musa da Mente')
+@section('title', 'TESTE DAS DEUSAS')
 
 @section('content')
 

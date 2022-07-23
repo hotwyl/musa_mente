@@ -19,12 +19,11 @@ class sendMail
     public function mailResult($dados)
     {
         try {
-
             $user = new stdClass();
             $user->name = $dados->nome;
             $user->email = $dados->email;
             $user->link = route('cliente.show', ['chave' => $dados->chave, 'protocolo' => $dados->protocolo]);
-            $send = Mail::send(new NewTest($user));
+            Mail::send(new NewTest($user));
             return true;
         } catch (\Throwable $th) {
             throw $th;

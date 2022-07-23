@@ -15,10 +15,10 @@ mix.js('resources/js/app.js', 'public/assets/js')
     .js('resources/js/function.js', 'public/assets/js')
     .js('resources/js/bootstrap.bundle.min.js', 'public/assets/js')
     .js('resources/js/bootstrap.js', 'public/assets/js')
-    // .js('resources/js/bootstrap.min.js', 'public/assets/js')
     .js('resources/js/jquery-3.6.0.min.js', 'public/assets/js')
     .js('resources/js/popper.min.js', 'public/assets/js')
     .js('resources/js/script.js', 'public/assets/js')
     .postCss('resources/css/bootstrap.min.css', 'public/assets/css')
     .postCss('resources/css/style.css', 'public/assets/css')
-    .postCss('resources/css/app.css', 'public/assets/css');
+    .postCss('resources/css/app.css', 'public/assets/css')
+    .postCss('resources/css/login.css', 'public/assets/css');

@@ -87,8 +87,7 @@
                                 desejado”.</blockquote>
                             </p>
                             <p class="fst-italic text-center"><span class="fw-bold">Aline Lachovski</span> – <span
-                                    class="fw-bolder">Musa Anfitriã</span> <br> <span class="fw-lighter">Sociedade Secreta
-                                    das Musas</span></p>
+                                    class="fw-bolder">Musa Anfitriã</span> <br> <span class="fw-lighter">Ordem das Musas</span></p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
@@ -120,10 +119,10 @@
                                 um desses valores abaixo, que mais, menos ou nada, represente você:</p>
                             <p>
                             <ul>
-                                <li>3 = a afirmação aplica-se totalmente a mim</li>
-                                <li>2 = a afirmação aplica-se apenas em parte a mim</li>
-                                <li>1 = a afirmação só se aplica ligeiramente a mim</li>
-                                <li>0 = a afirmação absolutamente não se aplica</li>
+                                <li>3 = a afirmação aplica-se na <u>Maior parte das vezes</u> a mim</li>
+                                <li>2 = a afirmação aplica-se <u>De vez em quando</u> a mim</li>
+                                <li>1 = a afirmação só se aplica <u>Às vezes</u> a mim</li>
+                                <li>-1 = a afirmação aplica-se <u>Raramente</u> a mim</li>
                             </ul>
                             </p>
                         </div>
@@ -138,8 +137,7 @@
                 <div class="modal-dialog modal-xl modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="ModalToggleLabel"><i class="bi bi-exclamation-triangle"></i> As 7
-                                Chaves Mentais Egípcias</h5>
+                            <h5 class="modal-title" id="ModalToggleLabel"><i class="bi bi-exclamation-triangle"></i>TODAS AS DEUSAS EM MIM!</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>

@@ -24,7 +24,13 @@ Route::controller(TesteController::class)->group(function () {
 
     Route::post('/', 'store')->name('cliente.store');
 
-    Route::get('/admin', 'admin')->name('admin');
+    Route::prefix('admin')->group(function(){
+        Route::get('/', 'admin')->name('admin')/*->middleware('auth')*/;
+        Route::get('/login', 'login')->name('login');
+        Route::post('/login', 'logar')->name('logar');
+        Route::get('/logout', 'logout')->name('logout');
+    });
+
 
     Route::get('/{chave}/{protocolo}', 'show')->name('cliente.show');
 });

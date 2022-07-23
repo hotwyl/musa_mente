@@ -6,18 +6,22 @@ use App\Repositorys\TesteRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Services\{getTeste, sendMail};
+use App\Services\{getTeste, sendMail, questTest};
 use Illuminate\Routing\Route;
 
 class TesteService
 {
     protected $repository;
+    protected $getTeste;
+    protected $sendMail;
+    protected $questTest;
 
-    public function __construct(TesteRepository $repository, getTeste $getTeste, sendMail $sendMail)
+    public function __construct(TesteRepository $repository, getTeste $getTeste, sendMail $sendMail, questTest $questTest)
     {
         $this->repository = $repository;
         $this->getTeste = $getTeste;
         $this->sendMail = $sendMail;
+        $this->questTest = $questTest;
     }
 
     public function testeApi($request)
@@ -52,18 +56,7 @@ class TesteService
 
     public function index()
     {
-
-        /**
-         * http://127.0.0.1:8000/?nome=tester&email=teste@teste.com
-         */
-        !empty($_GET["nome"]) ? $var['nome'] = strip_tags(addslashes(trim(htmlspecialchars($_GET["nome"])))) : '';
-        !empty($_GET["email"]) ? $var['email'] = strip_tags(addslashes(trim(htmlspecialchars($_GET["email"])))) : '';
-        !empty($_GET["fone"]) ? $var['fone'] = strip_tags(addslashes(trim(htmlspecialchars($_GET["fone"])))) : '';
-
-        $var['opt1'] = ["text" => "Raramente", "val" => -1];
-        $var['opt2'] = ["text" => "As vezes", "val" => 1];
-        $var['opt3'] = ["text" => "De vez em quando", "val" => 2];
-        $var['opt4'] = ["text" => "Maior parte das vezes", "val" => 3];
+        $var = $this->questTest->questTest();
 
         return view('cliente.index', [
             'dad' => $var
@@ -82,7 +75,8 @@ class TesteService
 
                 $send = $this->sendMail->mailResult($response);
 
-                if ($send == true) {
+                if ($send) {
+                    dd($send);
                     return view('cliente.obg', [
                         'resultado' => $response
                     ]);

@@ -7,6 +7,16 @@
 
 body {
     font-family: Arial, Verdana, Geneva, Tahoma, Helvetica, sans-serif;
-    max-width: 1024px;
+    /*max-width: 1024px;*/
     margin: auto;
+}
+
+@media print {
+    body,
+    html {
+        margin-top: 0%;
+        height: 100% !important;
+        width: 100% !important;
+        display: inline-block;
+    }
 }

@@ -7,15 +7,33 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreTesteRequest;
 use App\Http\Requests\TesteRequest;
 use App\Http\Requests\UpdateTesteRequest;
-use App\Services\TesteService;
+use App\Services\{TesteService, logarService};
+use illuminate\Support\Facades\Auth;
 
 class TesteController extends Controller
 {
     protected $service;
+    protected $logar;
 
-    public function __construct(TesteService $service)
+    public function __construct(TesteService $service, logarService $logar)
     {
+        /*$this->middleware('auth', ['except'=>[
+            'login', 'logar', 'testeApi', 'show', 'index', 'store'
+        ]]);*/
         $this->service = $service;
+        $this->logar = $logar;
+    }
+
+    public function login(){
+        return $this->logar->login();
+    }
+
+    public function logar(Request $request){
+        return $this->logar->logar($request);
+    }
+
+    public function logout(){
+        return $this->logar->logout();
     }
 
     public function testeApi(Request $request)

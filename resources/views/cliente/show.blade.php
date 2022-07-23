@@ -1,12 +1,12 @@
 @extends('layout')
 
-@section('title', 'Resultado Teste')
+@section('title', 'TESTE DAS DEUSAS')
 
 @section('content')
 
     <section class="my-3 text-center">
         <div class="alert alert-secondary" role="alert">
-            <h3>Resultado Teste <?= $resultado->nome ?></h3>
+            <h3>Resultado TESTE DAS DEUSAS <?= $resultado->nome ?></h3>
         </div>
     </section>
 
@@ -136,10 +136,10 @@
                 <p class="card-text"> Não 'seje' burraaaa, seja Musa. </p>
 
                 <p class="card-text">🌛S.S.M.🌜🦇<br>Aline Lachovski<br>Musa Anfitriã - Criadora do Musa da
-                    Mente<br>aline@musadamente.com.br </p>
+                    Mente<br><a href="mailto:contato@musadamente.com.br" target="_blank">contato@musadamente.com.br</a> </p>
 
                 <p class="text-center"> <button type="button" class="btn btn-secondary btn-sm"
-                        onclick="window.print();">Imprimir teste</button> </p>
+                        onclick="window.print();">CLIQUE E GERE SEU RESULTADO EM PDF</button> </p>
             </div>
             <div class="card-footer"></div>
         </div>

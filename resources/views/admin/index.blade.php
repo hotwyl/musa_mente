@@ -35,10 +35,10 @@
                                     <a class="btn btn-secondary btn-sm"
                                         href="{{ route('cliente.show', ['chave' => $value->chave, 'protocolo' => $value->protocolo]) }}"
                                         title="Exibir" target="_blank" role="button"><i class="bi bi-eye"></i></a>
-                                    <a class="btn btn-secondary btn-sm mx-1 disabled" href="#" role="button" aria-disabled="true"><i
+                                    {{-- <a class="btn btn-secondary btn-sm mx-1 disabled" href="#" role="button" aria-disabled="true"><i
                                             class="bi bi-envelope-open"></i></a>
                                     <a class="btn btn-secondary btn-sm disabled" href="#" role="button" aria-disabled="true"><i
-                                            class="bi bi-whatsapp"></i></a>
+                                            class="bi bi-whatsapp"></i></a> --}}
                                 </td>
                             </tr>
                         @endforeach
@@ -76,5 +76,5 @@
     </script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js">
     </script>
-    <script type="text/javascript" charset="utf8" src="assets/js/script.js"></script>
+    <script type="text/javascript" charset="utf8" src="assets/js/app.js"></script>
 @stop

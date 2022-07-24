@@ -10,11 +10,11 @@ use Illuminate\Support\Facades\Storage;
 
 class TesteRepository
 {
-    protected $teste;
+    protected $repository;
 
-    public function __construct(Teste $teste)
+    public function __construct(Teste $repository)
     {
-        $this->repository = $teste;
+        $this->repository = $repository;
     }
 
     public function buscarTeste($url)

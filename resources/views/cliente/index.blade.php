@@ -167,8 +167,8 @@
 @stop
 
 @section('js1')
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="assets/js/function.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/app.js"></script>
 @stop
 
 @section('js2')
@@ -176,5 +176,5 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/app.css" />
 @stop

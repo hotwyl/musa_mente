@@ -1,124 +1,220 @@
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+# Musa Mente - Sistema de Gerenciamento de Saúde Mental
 
-A brief description of what this project does and who it's for
+Este é o projeto Musa Mente, desenvolvido utilizando PHP, Laravel, MySQL, e Bootstrap. O objetivo do sistema é fornecer uma plataforma para o gerenciamento de dados relacionados à saúde mental. Ele está atualmente hospedado na HostGator e você pode acessá-lo através do seguinte link:
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+[Acessar Sistema](https://teste.musadamente.com.br/admin)
 
-## Índice 
+## Pré-requisitos
 
-* [Project Title](#project-title)
-* [Descriptions](#descriptions)
-* [Authors](#authors)
-* [License](#license)
-* [Color Reference](#color-reference)
-* [Typography](#typography)
-* [Business Rules](#business-rules)
-* [Features](#features)
-* [Optimizations](#optimizations)
-* [Prerequisites](#prerequisites)
-* [Tech Stack](#tech-stack)
-* [Roadmap](#roadmap)
-* [Screenshots](#screenshots)
-* [Related](#related)
-* [Documentation](#documentation)
-* [Appendix](#appendix)
+Antes de começar, você precisa ter os seguintes programas instalados em seu computador:
 
-## Descriptions
+- PHP (versão recomendada: 8.0 ou superior)
+    - Documentação do PHP: https://www.php.net/manual/pt_BR/
 
-<h4 align="center"> 
-🚧 React Select 🚀 Em construção...  🚧 Projeto em construção 
-</h4>
+- Composer (gerenciador de dependências do PHP)
+    - Instalação do Composer: https://getcomposer.org/download/
 
-<p align="center">🚀 lib para construir interfaces do usuário com componentes reutilizáveis</p>
+- MySQL ou MariaDB
+    - Documentação do MySQL: https://dev.mysql.com/doc/
 
-## Authors
+- Laravel (framework PHP utilizado no projeto)
+    - Documentação do Laravel: https://laravel.com/docs
 
-| [<img src="https://avatars.githubusercontent.com/u/37356058?v=4" width=115><br><sub>Camila Fernanda Alves</sub>](https://github.com/camilafernanda) |  [<img src="https://avatars.githubusercontent.com/u/30351153?v=4" width=115><br><sub>Guilherme Lima</sub>](https://github.com/guilhermeonrails) |  [<img src="https://avatars.githubusercontent.com/u/8989346?v=4" width=115><br><sub>Alex Felipe</sub>](https://github.com/alexfelipe) |
-| :---: | :---: | :---: |
+- Node.js (para rodar o frontend com o Bootstrap e outras dependências)
+    - Instalação do Node.js: https://nodejs.org/
 
-## License
+## Clonando o Repositório
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Para começar a trabalhar no projeto, você precisa clonar o repositório. Execute o seguinte comando no seu terminal:
 
-## Color Reference
+```bash
+git clone https://github.com/willfrombrasil/musa_mente.git
+```
 
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Example Color | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
-| Example Color | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
-| Example Color | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
-| Example Color | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
+Depois de clonar, entre na pasta do projeto:
 
-## Typography
+```bash
+cd musa_mente
+```
 
-## Business Rules
+## Instalação e Configuração
 
-What did you learn while building this project? What challenges did you face and how did you overcome them?
+1. Instalar as dependências do PHP
 
-## Features
+Dentro da pasta do projeto, execute o comando abaixo para instalar as dependências do Laravel:
 
-- [x] Cadastro de usuário
-- [x] Cadastro de cliente
-- [ ] Cadastro de produtos
-- [ ] Light/dark mode toggle
-- [ ] Live previews
-- [ ] Fullscreen mode
-- [ ] Cross platform
+```bash
+composer install
+```
 
-## Optimizations
+2. Configurar o Banco de Dados
 
-What optimizations did you make in your code? E.g. refactors, performance improvements, accessibility
+Copie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente de acordo com seu banco de dados MySQL. Por exemplo:
 
-## Prerequisites
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=musadamente
+DB_USERNAME=root
+DB_PASSWORD=senha_do_banco
+```
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
-Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+Em seguida, gere a chave da aplicação:
 
-## Tech Stack
+```bash
+php artisan key:generate
+```
 
-<h3 align="left">Languages and Tools:</h3>
+3. Rodar as Migrations do Banco de Dados
 
-<p align="left"> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://laravel.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-plain-wordmark.svg" alt="laravel" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/> </a> </p>
+Para criar as tabelas no banco de dados, execute as migrations:
 
-## Roadmap
+```bash
+php artisan migrate
+```
 
-- Additional browser support
-- Add more integrations
-- Any additional information goes here
-- Here are some related projects
+4. Instalar Dependências do Frontend
 
-## Screenshots
+Se o projeto usar JavaScript ou o Bootstrap, execute o comando para instalar as dependências do frontend:
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+```bash
+npm install
+```
 
+5. Compilar os Assets
 
-## Documentation
+Para compilar os arquivos CSS e JavaScript, execute o comando:
 
-[Documentation](https://linktodocumentation)
+```bash
+npm run dev
+```
 
-[Awesome README](https://github.com/matiassingers/awesome-readme)
+Agora o projeto está pronto para rodar localmente! Você pode iniciá-lo com o seguinte comando:
 
+```bash
+php artisan serve
+```
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+O sistema estará disponível no endereço: http://localhost:8000
 
-[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/fagnerpsantos)](#)
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fagnerpsantos/)](#)
-[![Twitter Badge](https://img.shields.io/badge/-Twitter-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/fagnerpsantos)](#)
-[![Youtube Badge](https://img.shields.io/badge/-YouTube-ff0000?style=flat-square&labelColor=ff0000&logo=youtube&logoColor=white&link=https://www.youtube.com/user/TreinaWeb)](#)
-<a href="#"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="#"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="#"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="#"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+## Como Editar o Projeto
 
+O projeto está organizado em várias pastas, mas as mais importantes para edição são:
 
-# Tecnologias utilizadas
-* Php / Laravel
-* MySql / MariaDB / PostgreSQL / MongoDB / SQLite / Firebird
-* Api RestFul / JSON
-* Auth JWT
-* PDO PHP
+- app/: Contém os controladores, modelos e lógicas do backend.
 
+- resources/views/: Contém os arquivos de visualização (frontend).
+
+- public/: Contém arquivos públicos como imagens, CSS, e JavaScript.
+
+### Editando Páginas
+
+As páginas do sistema estão dentro da pasta `resources/views`. Os arquivos Blade (com extensão `.blade.php`) são utilizados para gerar o HTML. Para editar uma página, basta encontrar o arquivo correspondente e fazer as alterações desejadas.
+
+Exemplo: Para editar a página de login, procure por `login.blade.php` dentro de `resources/views/auth/`.
+
+### Editando Funcionalidades
+
+Se você precisar editar ou adicionar funcionalidades ao sistema, pode começar a trabalhar nos controladores e modelos, que estão na pasta `app/`.
+
+Por exemplo, se você deseja adicionar um novo recurso para "Gestão de Usuários", você pode criar um novo controlador com o comando:
+
+```bash
+php artisan make:controller UserController
+``` 
+
+E depois adicionar as funções necessárias dentro do controlador.
+
+### Como Atualizar ou Inserir Funcionalidades
+
+**Adicionando uma Nova Funcionalidade**
+
+- Criar o Controlador:
+Use o comando Artisan para criar um novo controlador, por exemplo:
+
+```bash
+php artisan make:controller NovoRecursoController
+```
+
+- Adicionar Rota:
+Abra o arquivo `routes/web.php` e adicione a nova rota para o recurso. Exemplo:
+
+```bash
+Route::get('/novo-recurso', [NovoRecursoController::class, 'index']);
+```
+
+- Adicionar Visão (View):
+Crie ou edite os arquivos Blade em `resources/views` para exibir a nova funcionalidade.
+
+- Criar Modelos e Migrations (se necessário):
+Caso precise criar uma nova tabela no banco, use:
+
+```bash
+php artisan make:model NovoRecurso -m
+```
+
+E depois defina a estrutura da tabela no arquivo de migration gerado em `database/migrations/`.
+
+- Rodar Migrations:
+Após criar a migration, execute o comando:
+
+```bash
+php artisan migrate
+```
+
+**Atualizando Funcionalidades**
+
+- Para atualizar uma funcionalidade existente, edite os arquivos do controlador, da view ou do modelo de acordo com a necessidade.
+
+- Certifique-se de rodar as migrations novamente, caso haja alterações no banco de dados.
+
+**Hospedando na HostGator**
+1. Subir Arquivos para a HostGator
+
+Você pode usar FTP ou o cPanel da HostGator para fazer upload dos arquivos do projeto. Para isso:
+
+- Acesse seu cPanel e procure pela ferramenta "Gerenciador de Arquivos".
+
+- Envie todos os arquivos do projeto para o diretório desejado no servidor.
+
+2. Configurar o Banco de Dados
+
+- No cPanel da HostGator, crie um novo banco de dados MySQL.
+
+- Configure o banco de dados no arquivo .env com as credenciais corretas de acesso ao banco no servidor.
+
+3. Rodar Migrations no Servidor
+
+Se você tiver acesso SSH ao servidor, entre via terminal e rode as migrations com:
+
+```bash
+php artisan migrate
+```
+
+4. Configurar o Frontend
+
+Se o projeto usar dependências de frontend (como o Bootstrap), não se esqueça de rodar o comando para compilar os assets:
+
+```bash
+npm run prod
+```
+
+5. Finalizar a Configuração
+
+Depois de fazer o upload dos arquivos e configurar o banco de dados, você pode acessar o sistema através do domínio configurado na HostGator. Por exemplo: https://seusite.com.br/admin.
+
+## Documentação de Apoio
+
+Aqui estão alguns links úteis para entender melhor as tecnologias usadas neste projeto:
+
+PHP: [Documentação Oficial do PHP](https://teste.musadamente.com.br/admin)
+
+Laravel: [Documentação Oficial do Laravel](https://laravel.com/docs)
+
+MySQL: [Documentação Oficial do MySQL](https://dev.mysql.com/doc/)
+
+Bootstrap: [Documentação Oficial do Bootstrap](https://getbootstrap.com/)
 
 ## Requisitos
 
